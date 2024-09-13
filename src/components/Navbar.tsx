@@ -1,5 +1,5 @@
 import MaxWidthWrapper from './MaxWidthWrapper';
-import { DownloadIcon, MailIcon, MenuIcon } from 'lucide-react';
+import { DownloadIcon, MenuIcon } from 'lucide-react';
 import { buttonVariants } from './ui/button';
 import {
     DropdownMenu,
@@ -43,19 +43,18 @@ const Navbar = () => {
                             <div className="hidden h-8 w-px bg-primary md:block" />
 
                             <a
-                                target="_blank"
-                                href="mailto:james@co-axiom.co.nz"
+                                href="https://localhost:7176/auth/login"
                                 className={buttonVariants({
                                     size: 'sm',
                                     variant: 'ghost',
                                     className:
-                                        'hover:text-semibold hidden border border-primary hover:border-blue-400 hover:bg-blue-400 hover:text-white md:flex md:items-center',
+                                        'hover:text-semibold hidden bg-purple-600 rounded-lg hover:bg-purple-600/75 text-xl hover:text-white md:flex md:items-center',
                                 })}
                             >
-                                Contact
-                                <MailIcon className="ml-2 size-4" />
+                                Twitch
                             </a>
 
+                            {/* MOBILE MENU */}
                             <div className="md:hidden">
                                 <DropdownMenu>
                                     <DropdownMenuTrigger asChild>
@@ -88,6 +87,7 @@ const Navbar = () => {
                                     </DropdownMenuContent>
                                 </DropdownMenu>
                             </div>
+                            {/* MOBILE MENU END */}
                         </>
                     </div>
                 </div>
