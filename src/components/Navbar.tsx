@@ -8,6 +8,9 @@ import {
 } from './ui/dropdown-menu';
 
 const Navbar = () => {
+    let _twitchClientId = import.meta.env.VITE_TWITCH_CLIENT_ID;
+    let _redirectUrl = import.meta.env.VITE_TWITCH_REDIRECT;
+
     return (
         <nav className="absolute inset-x-0 top-0 z-[100] h-14 w-full border-b-2 border-primary text-white backdrop-blur-lg transition-all">
             <MaxWidthWrapper>
@@ -43,7 +46,7 @@ const Navbar = () => {
                             <div className="hidden h-8 w-px bg-primary md:block" />
 
                             <a
-                                href="https://localhost:7176/auth/login"
+                                href={`https://id.twitch.tv/oauth2/authorize?response_type=code&client_id=${_twitchClientId}&redirect_uri=${_redirectUrl}&scope=channel:manage:redemptions moderator:manage:banned_users user:read:email channel:bot`}
                                 className={buttonVariants({
                                     size: 'sm',
                                     variant: 'ghost',
